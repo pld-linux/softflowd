@@ -1,0 +1,11 @@
+# Config file for softflowd startup
+
+# Default - not very useful
+#SOFTFLOW_OPTS="-i eth0"
+# Example NetFlow v5 export from traffic on eth1
+#SOFTFLOW_OPTS="-v 5 -i eth1 -n hostname:2055"
+
+SOFTFLOW_OPTS=""
+
+# This must be last line !
+# vi:syntax=sh

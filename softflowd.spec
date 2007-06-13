@@ -27,6 +27,9 @@ export using versions 1, 5 or 9 of the NetFlow protocol.
 
 %prep
 %setup -q
+
+sed -i 's#/var/empty#/usr/share/empty#'	softflowd.h
+
 %build
 %{__libtoolize}
 %{__aclocal}

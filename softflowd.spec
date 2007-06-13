@@ -11,6 +11,7 @@ Source2:	%{name}.sysconfig
 URL:		http://www.mindrot.org/projects/softflowd/
 BuildRequires:	autoconf
 BuildRequires:	libtool
+BuildRequires:	libpcap-devel
 BuildRequires:	rpmbuild(macros) >= 1.228
 Requires(post,preun):	/sbin/chkconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -27,7 +28,6 @@ export using versions 1, 5 or 9 of the NetFlow protocol.
 %prep
 %setup -q
 %build
-%{__gettextize}
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}

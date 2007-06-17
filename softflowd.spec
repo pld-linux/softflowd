@@ -1,4 +1,5 @@
 Summary:	Network traffic analyser capable of Cisco NetFlow data export
+Summary(pl.UTF-8):	Analizator ruchu sieciowego z możliwością eksportu danych Cisco NetFlow
 Name:		softflowd
 Version:	0.9.8
 Release:	0.1
@@ -10,8 +11,9 @@ Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 URL:		http://www.mindrot.org/projects/softflowd/
 BuildRequires:	autoconf
-BuildRequires:	libtool
+BuildRequires:	automake
 BuildRequires:	libpcap-devel
+BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.228
 Requires(post,preun):	/sbin/chkconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -24,6 +26,16 @@ addresses or (if the overlying protocol is TCP or UDP) address/port
 tuples. The intended use of softflowd is as a software implementation
 of Cisco's NetFlow traffic account system. softflowd supports data
 export using versions 1, 5 or 9 of the NetFlow protocol.
+
+%description -l pl.UTF-8
+softflowd to programowa implementacja opartego na przepływie monitora
+ruchu sieciowego. Odczytuje ruch sieciowy i gromadzi informacje o
+aktywnych przepływach ruchu. "Przepływ ruchu" to komunikacja między
+dwoma adresami IP lub, jeśli protokołem jest TCP lub UDP, parami
+adres-port. softflowd powstał z zamiarem wykorzystywania jako
+programowa implementacja systemu rozliczania ruchu Cisco NetFlow.
+Obsługuje eksport danych przy użyciu wersji 1, 5 i 9 protokołu
+NetFlow.
 
 %prep
 %setup -q
